@@ -1,0 +1,80 @@
+###
+GET  http://127.0.0.1:8000/api/users/
+Content-Type: application/json
+
+###
+POST http://127.0.0.1:8000/api/users/
+Content-Type: application/json
+
+{
+    "email": "ee-3@ya.ru",
+    "username": "q1",
+    "first_name": "vi",
+    "last_name": "pi",
+    "password": "q1r4w2e3"
+}
+###
+POST http://127.0.0.1:8000/auth/jwt/create/
+Content-Type: application/json
+
+{
+    "username": "q1",
+    "password": "q1r4w2e3"
+}
+###
+GET http://127.0.0.1:8000/api/tags/
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQzMzE0NzE2LCJqdGkiOiJjMDdmZjM3ZjQyMGE0NDExOTU1M2RiZWNjOWU3NTNhZCIsInVzZXJfaWQiOjF9.9D9tsPfExWFU1jqG98GcteJNav50HkjpOkP9uXKTthc
+###
+GET http://127.0.0.1:8000/api/tags/1/
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQzMzE0NzE2LCJqdGkiOiJjMDdmZjM3ZjQyMGE0NDExOTU1M2RiZWNjOWU3NTNhZCIsInVzZXJfaWQiOjF9.9D9tsPfExWFU1jqG98GcteJNav50HkjpOkP9uXKTthc
+###
+GET http://127.0.0.1:8000/api/v1/posts/1/comments/
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQzMzE0NzE2LCJqdGkiOiJjMDdmZjM3ZjQyMGE0NDExOTU1M2RiZWNjOWU3NTNhZCIsInVzZXJfaWQiOjF9.9D9tsPfExWFU1jqG98GcteJNav50HkjpOkP9uXKTthc
+###
+POST http://127.0.0.1:8000/api/v1/groups/
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQzMzE0NzE2LCJqdGkiOiJjMDdmZjM3ZjQyMGE0NDExOTU1M2RiZWNjOWU3NTNhZCIsInVzZXJfaWQiOjF9.9D9tsPfExWFU1jqG98GcteJNav50HkjpOkP9uXKTthc
+
+{
+    "title": "436534767rer",
+    "slug": 4,
+    "description": "346436346bvbvbvb"
+}
+###
+POST http://127.0.0.1:8000/api/v1/posts/
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQzMzE0NzE2LCJqdGkiOiJjMDdmZjM3ZjQyMGE0NDExOTU1M2RiZWNjOWU3NTNhZCIsInVzZXJfaWQiOjF9.9D9tsPfExWFU1jqG98GcteJNav50HkjpOkP9uXKTthc
+
+{
+    "text": "7777 собрались в р4кции «Русской мысли», чтобы поговорить о народном театре. Проект Шехтеля всем нравится.",
+    "group": 2
+}
+###
+POST http://127.0.0.1:8000/api/v1/posts/1/comments/
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQzMzE0NzE2LCJqdGkiOiJjMDdmZjM3ZjQyMGE0NDExOTU1M2RiZWNjOWU3NTNhZCIsInVzZXJfaWQiOjF9.9D9tsPfExWFU1jqG98GcteJNav50HkjpOkP9uXKTthc
+
+{
+    "post": 1,
+    "text": "22тест тест"
+}
+###
+GET http://127.0.0.1:8000/api/v1/posts/1/comments/
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQzMzE0NzE2LCJqdGkiOiJjMDdmZjM3ZjQyMGE0NDExOTU1M2RiZWNjOWU3NTNhZCIsInVzZXJfaWQiOjF9.9D9tsPfExWFU1jqG98GcteJNav50HkjpOkP9uXKTthc
+###
+POST http://127.0.0.1:8000/auth/users/
+Content-Type: application/json
+
+{
+    "username": "q1",
+    "password": "q1r4w2e3"
+}
+###
+POST http://127.0.0.1:8000/auth/jwt/create/
+Content-Type: application/json
+
+{
+    "username": "q1",
+    "password": "q1r4w2e3"
+}
