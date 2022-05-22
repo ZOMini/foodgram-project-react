@@ -4,34 +4,34 @@ from users.models import User
 
 
 class Ingredient(models.Model):
-    title = models.CharField(
+    name = models.CharField(
         'Название ингредиента',
         max_length=256,
     )
-    dimension = models.CharField(
+    measurement_unit = models.CharField(
         'ед. изм.',
         max_length=64,
         blank=True,
     )
 
     class Meta:
-        ordering = ('title', )
+        ordering = ('name', )
         verbose_name = 'ингредиент'
         verbose_name_plural = 'ингредиенты'
 
     def __str__(self):
-        return f'{self.title}, {self.dimension}'
+        return f'{self.name}, {self.measurement_unit}'
 
 
 class Tag(models.Model):
-    title = models.CharField(
-        max_length=64,
-        verbose_name='Title',
-        unique=True
-    )
-    display_name = models.CharField(
+    name = models.CharField(
         max_length=64,
         verbose_name='Название',
+        unique=True
+    )
+    slug = models.CharField(
+        max_length=64,
+        verbose_name='Слаг',
         unique=True
     )
     color = models.CharField(
@@ -41,7 +41,7 @@ class Tag(models.Model):
     )
 
     def __str__(self):
-        return self.title
+        return self.name
 
 
 class Recipe(models.Model):

@@ -1,8 +1,8 @@
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, PermissionsMixin
 from django.db import models
 
 
-class User(AbstractUser):
+class User(AbstractUser, PermissionsMixin):
     """
     Создание своей модели пользователя.
     """
@@ -26,9 +26,12 @@ class User(AbstractUser):
         max_length=150,
         verbose_name='Фамилия',
         help_text='Введите фамилию пользователя')
+    is_subscribed = models.BooleanField(
+        default=False,
+        verbose_name='Подписка на данного пользователя',
+        help_text='Отметьте для подписки на данного пользователя')
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username', 'first_name', 'last_name', 'password']
 
     def __str__(self):
-        """Строковое представление модели (отображается в консоли)."""
         return self.username

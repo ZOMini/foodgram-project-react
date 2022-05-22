@@ -1,7 +1,6 @@
-###
+### -----AUTH-------
 GET  http://127.0.0.1:8000/api/users/
 Content-Type: application/json
-
 ###
 POST http://127.0.0.1:8000/api/users/
 Content-Type: application/json
@@ -14,19 +13,50 @@ Content-Type: application/json
     "password": "q1r4w2e3"
 }
 ###
-POST http://127.0.0.1:8000/auth/jwt/create/
+GET http://127.0.0.1:8000/api/users/1/
+Content-Type: application/json
+Authorization: Token 168465847ffbd57099d57d1d65ae7d4af23171bc
+###
+GET http://127.0.0.1:8000/api/users/me/
+Content-Type: application/json
+Authorization: Token 168465847ffbd57099d57d1d65ae7d4af23171bc
+###
+POST http://127.0.0.1:8000/api/users/set_password/
+Content-Type: application/json
+Authorization: Token 168465847ffbd57099d57d1d65ae7d4af23171bc
+
+{
+    "new_password": "q1r4w2e3",
+    "current_password": "q1r4w2e3"
+}
+###
+POST http://127.0.0.1:8000/api/auth/token/login/
 Content-Type: application/json
 
 {
-    "username": "q1",
+    "email": "ee-3@ya.ru",
     "password": "q1r4w2e3"
 }
 ###
-GET http://127.0.0.1:8000/api/tags/
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQzMzE0NzE2LCJqdGkiOiJjMDdmZjM3ZjQyMGE0NDExOTU1M2RiZWNjOWU3NTNhZCIsInVzZXJfaWQiOjF9.9D9tsPfExWFU1jqG98GcteJNav50HkjpOkP9uXKTthc
+POST http://127.0.0.1:8000/api/auth/token/logout/
+Content-Type: application/json
+Authorization: Token 168465847ffbd57099d57d1d65ae7d4af23171bc
+
+### -----TAGS-------
+GET http://127.0.0.1:8000/api/tag/
+Content-Type: application/json
 ###
-GET http://127.0.0.1:8000/api/tags/1/
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQzMzE0NzE2LCJqdGkiOiJjMDdmZjM3ZjQyMGE0NDExOTU1M2RiZWNjOWU3NTNhZCIsInVzZXJfaWQiOjF9.9D9tsPfExWFU1jqG98GcteJNav50HkjpOkP9uXKTthc
+GET http://127.0.0.1:8000/api/tag/2/
+Content-Type: application/json
+
+### -----INGREDIENTS-------
+GET http://127.0.0.1:8000/api/ingredient/
+Content-Type: application/json
+###
+GET http://127.0.0.1:8000/api/ingredient/1/
+Content-Type: application/json
+
+
 ###
 GET http://127.0.0.1:8000/api/v1/posts/1/comments/
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQzMzE0NzE2LCJqdGkiOiJjMDdmZjM3ZjQyMGE0NDExOTU1M2RiZWNjOWU3NTNhZCIsInVzZXJfaWQiOjF9.9D9tsPfExWFU1jqG98GcteJNav50HkjpOkP9uXKTthc

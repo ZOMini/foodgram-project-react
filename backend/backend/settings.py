@@ -21,12 +21,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'debug_toolbar',
-    'rest_framework',
-    'sorl.thumbnail',
-    'djoser',
     'api',
     'users',
+    'debug_toolbar',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'sorl.thumbnail',
+    'djoser',
 ]
 
 MIDDLEWARE = [
@@ -95,18 +96,20 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated', 
     ],
 
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+    
+    'DEFAULT_PAGINATION_CLASS': 'api.pagination.CustomPagination',
 }
 
 AUTH_USER_MODEL = 'users.User'
 
-SIMPLE_JWT = {
-    # Устанавливаем срок жизни токена
-   'ACCESS_TOKEN_LIFETIME': timedelta(days=30),
-   'AUTH_HEADER_TYPES': ('Bearer',),
-} 
+# SIMPLE_JWT = {
+#     # Устанавливаем срок жизни токена
+#    'ACCESS_TOKEN_LIFETIME': timedelta(days=30),
+#    'AUTH_HEADER_TYPES': ('Bearer',),
+# } 
 
 DJOSER = {
     'PERMISSIONS': {
@@ -120,6 +123,8 @@ DJOSER = {
         'current_user': 'api.serializers.RegistrationSerializer',
     }
 }
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
 
 LANGUAGE_CODE = 'en-us'
 

@@ -27,12 +27,25 @@ class RegistrationSerializer(UserCreateSerializer):
         write_only_fields = ('password',)
         read_only_fields = ('id',)
 
+    # def to_representation(self, obj):
+    #     """
+    #     Метод представления результатов сериализатора.
+    #     """
+    #     result = super(RegistrationSerializer, self).to_representation(obj)
+    #     result.pop('password', None)
+    #     return result
+
 class TagSerializer(serializers.ModelSerializer):
-    author = SlugRelatedField(slug_field='username', read_only=True)
+    # author = SlugRelatedField(slug_field='username', read_only=True)
 
     class Meta:
         fields = '__all__'
         model = Tag
+
+class IngredientSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Ingredient
+        fields = '__all__'
 
 
 # class CommentSerializer(serializers.ModelSerializer):
