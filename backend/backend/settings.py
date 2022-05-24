@@ -2,32 +2,35 @@
 import os
 from datetime import timedelta
 
+from dotenv import load_dotenv
+
+load_dotenv()
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-
 
 SECRET_KEY = 'b5g8ob4h4umd^5otf9lg!)odp%3bhzdi62b!j__u3+b6tc9)*v'
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*',]
 
 INTERNAL_IPS = ["127.0.0.1",]
 
 INSTALLED_APPS = [
+    'api',
+    'users',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'api',
-    'users',
-    'debug_toolbar',
     'rest_framework',
     'rest_framework.authtoken',
+    'django_filters',
     'sorl.thumbnail',
     'djoser',
+    'colorfield',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
@@ -42,11 +45,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'backend.urls'
-
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -74,7 +77,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+# DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -101,6 +104,10 @@ REST_FRAMEWORK = {
     ),
     
     'DEFAULT_PAGINATION_CLASS': 'api.pagination.CustomPagination',
+    
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',),
 }
 
 AUTH_USER_MODEL = 'users.User'
@@ -123,8 +130,8 @@ DJOSER = {
         'current_user': 'api.serializers.RegistrationSerializer',
     }
 }
-CORS_ORIGIN_ALLOW_ALL = True
-CORS_ALLOW_CREDENTIALS = True
+# CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ALLOW_CREDENTIALS = True
 
 LANGUAGE_CODE = 'en-us'
 

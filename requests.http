@@ -56,6 +56,9 @@ Content-Type: application/json
 GET http://127.0.0.1:8000/api/ingredient/1/
 Content-Type: application/json
 
+### -----RECIPES-------
+GET http://127.0.0.1:8000/api/recipes/
+Content-Type: application/json
 
 ###
 GET http://127.0.0.1:8000/api/v1/posts/1/comments/
