@@ -7,7 +7,7 @@ services:
     env_file:
       - ./.env
   frontend:
-    image: 19870208/frontend:v1
+    image: zomin/infra_frontend
     volumes:
       - result_build:/build
   nginx:
@@ -25,13 +25,13 @@ services:
     depends_on:
       - frontend
   backend:
-    image: 19870208/foodgram:latest
+    image: zomin/backend
     restart: always
     depends_on:
       - db
     volumes:
-      - static_value:/code/static/
-      - media_value:/code/media/
+      - static_value:/backend/static/
+      - media_value:/backend/media/
     env_file:
     - ./.env
 volumes:
