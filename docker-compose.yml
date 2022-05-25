@@ -27,8 +27,8 @@ services:
   backend:
     image: zomin/backend
     restart: always
-    # depends_on:
-    #   - db
+    depends_on:
+      - db
     volumes:
       - static_value:/backend/static/
       - media_value:/backend/media/
