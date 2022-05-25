@@ -1,10 +1,17 @@
+from api.models import (
+    Cart,
+    Favorite,
+    Ingredient,
+    IngredientRecipe,
+    Recipe,
+    Subscribe,
+    Tag,
+    TagRecipe
+)
 from djoser.serializers import UserCreateSerializer
 from drf_extra_fields.fields import Base64ImageField
 from rest_framework import serializers
 from users.models import User
-
-from api.models import (Cart, Favorite, Ingredient, IngredientRecipe, Recipe,
-                        Subscribe, Tag, TagRecipe)
 
 
 class CommonSubscribed(metaclass=serializers.SerializerMetaclass):
