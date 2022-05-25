@@ -70,7 +70,6 @@ class CommonCount(metaclass=serializers.SerializerMetaclass):
 class RegistrationSerializer(UserCreateSerializer, CommonSubscribed):
 
     class Meta:
-        
         model = User
         fields = ('id', 'username', 'email', 'first_name',
                   'last_name', 'is_subscribed', 'password')
@@ -79,7 +78,6 @@ class RegistrationSerializer(UserCreateSerializer, CommonSubscribed):
         extra_kwargs = {'is_subscribed': {'required': False}}
 
     def to_representation(self, obj):
-        
         result = super(RegistrationSerializer, self).to_representation(obj)
         result.pop('password', None)
         return result
@@ -95,7 +93,6 @@ class IngredientSerializer(serializers.ModelSerializer):
 
 
 class IngredientAmountSerializer(serializers.ModelSerializer):
-    
     id = serializers.ReadOnlyField(source='ingredient.id')
     name = serializers.ReadOnlyField(source='ingredient.name')
     measurement_unit = serializers.ReadOnlyField(
@@ -108,9 +105,8 @@ class IngredientAmountSerializer(serializers.ModelSerializer):
 
 
 class IngredientAmountRecipeSerializer(serializers.ModelSerializer):
-    
     id = serializers.IntegerField(source='ingredient.id')
-    
+
     class Meta:
         model = IngredientRecipe
         fields = ('id', 'amount')
@@ -127,7 +123,6 @@ class TagSerializer(serializers.ModelSerializer):
 
 
 class FavoriteSerializer(serializers.Serializer):
-    
     id = serializers.IntegerField()
     name = serializers.CharField()
     cooking_time = serializers.IntegerField()
@@ -135,7 +130,6 @@ class FavoriteSerializer(serializers.Serializer):
 
 
 class CartSerializer(serializers.Serializer):
-    
     id = serializers.IntegerField()
     name = serializers.CharField()
     cooking_time = serializers.IntegerField()
@@ -144,7 +138,6 @@ class CartSerializer(serializers.Serializer):
 
 class RecipeSerializer(serializers.ModelSerializer,
                        CommonRecipe):
-    
     author = RegistrationSerializer(read_only=True)
     tags = TagSerializer(many=True)
     ingredients = IngredientAmountSerializer(
@@ -161,7 +154,6 @@ class RecipeSerializer(serializers.ModelSerializer,
 
 class RecipeSerializerPost(serializers.ModelSerializer,
                            CommonRecipe):
-    
     author = RegistrationSerializer(read_only=True)
     tags = serializers.PrimaryKeyRelatedField(
         queryset=Tag.objects.all(),
@@ -169,7 +161,7 @@ class RecipeSerializerPost(serializers.ModelSerializer,
     ingredients = IngredientAmountRecipeSerializer(
         source='ingredientrecipes', many=True)
     image = Base64ImageField(max_length=None, use_url=False,)
-    
+
     class Meta:
         model = Recipe
         fields = ('id', 'author', 'name', 'image', 'text',
@@ -246,7 +238,6 @@ class RecipeSerializerPost(serializers.ModelSerializer,
 
 
 class RecipeMinifieldSerializer(serializers.ModelSerializer):
-    
     class Meta:
         model = Recipe
         fields = ('id', 'name', 'cooking_time', 'image')

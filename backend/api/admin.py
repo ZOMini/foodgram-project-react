@@ -22,6 +22,7 @@ class TagRecipeInline(admin.TabularInline):
     model = TagRecipe
     extra = 0
 
+
 @admin.register(Ingredient)
 class IngredientAdmin(admin.ModelAdmin):
 
@@ -29,6 +30,7 @@ class IngredientAdmin(admin.ModelAdmin):
     search_fields = ('name', )
     empty_value_display = '-пусто-'
     list_filter = ('name',)
+
 
 @admin.register(Tag)
 class TagAdmin(admin.ModelAdmin):
@@ -38,6 +40,7 @@ class TagAdmin(admin.ModelAdmin):
     empty_value_display = '-пусто-'
     list_filter = ('name',)
 
+
 @admin.register(Cart)
 class CartAdmin(admin.ModelAdmin):
 
@@ -46,6 +49,7 @@ class CartAdmin(admin.ModelAdmin):
     empty_value_display = '-пусто-'
     list_filter = ('user',)
 
+
 @admin.register(Favorite)
 class FavoriteAdmin(admin.ModelAdmin):
 
@@ -53,6 +57,7 @@ class FavoriteAdmin(admin.ModelAdmin):
     search_fields = ('user', )
     empty_value_display = '-пусто-'
     list_filter = ('user',)
+
 
 @admin.register(Recipe)
 class RecipeAdmin(admin.ModelAdmin):
@@ -68,6 +73,7 @@ class RecipeAdmin(admin.ModelAdmin):
 
         return Favorite.objects.filter(recipe=obj).count()
     count_favorite.short_description = 'Число добавлении в избранное'
+
 
 @admin.register(Subscribe)
 class SubscribeAdmin(admin.ModelAdmin):
