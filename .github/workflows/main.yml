@@ -64,7 +64,7 @@ jobs:
         username: ${{ secrets.USER }}
         passphrase: ${{ secrets.PASSPHRASE }}
         key: ${{ secrets.SSH_KEY }}
-        stack_file_name: docker-compose.yaml
+        stack_file_name: docker-compose.yml
         script: |
           sudo docker pull ${{ secrets.DOCKER_USERNAME }}/backend
           sudo docker pull ${{ secrets.DOCKER_USERNAME }}/infra_frontend
