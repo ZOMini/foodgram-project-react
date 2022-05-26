@@ -36,9 +36,10 @@ services:
       - db
     volumes:
       - static_value:/static/
-      - media_value:/media/
+      - media_value:/backend/media/
     env_file:
     - ./.env
+
 volumes:
   result_build:
   postgres_data:
