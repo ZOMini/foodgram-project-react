@@ -22,8 +22,8 @@ services:
       - media_value:/backend/media/
       - result_build:/usr/share/nginx/html/
       #- result_build:/usr/share/nginx/html/
-      - /redoc.html:/usr/share/nginx/html/api/docs/redoc.html
-      - /openapi-schema.yml:/usr/share/nginx/html/api/docs/openapi-schema.yml
+      - ./redoc.html:/usr/share/nginx/html/api/docs/redoc.html
+      - ./openapi-schema.yml:/usr/share/nginx/html/api/docs/openapi-schema.yml
       - ./docs/:/usr/share/nginx/html/api/docs/
     restart: always
     depends_on:
