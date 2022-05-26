@@ -36,7 +36,7 @@ services:
       - db
     volumes:
       - static_value:/static/
-      - media_value:/media/
+      - media_value:/var/html/media/
     env_file:
     - ./.env
 
