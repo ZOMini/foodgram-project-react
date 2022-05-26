@@ -138,6 +138,12 @@ class CartSerializer(serializers.Serializer):
 
 class RecipeSerializer(serializers.ModelSerializer,
                        CommonRecipe):
+    image = serializers.ImageField(
+        max_length=None,
+        required=True,
+        allow_empty_file=False,
+        use_url=True,
+    )
     author = RegistrationSerializer(read_only=True)
     tags = TagSerializer(many=True)
     ingredients = IngredientAmountSerializer(
