@@ -11,9 +11,9 @@ SECRET_KEY = 'b5g8ob4h4umd^5otf9lg!)odp%3bhzdi62b!j__u3+b6tc9)*v'
 
 DEBUG = os.getenv('DEBUG', default=True),
 
-ALLOWED_HOSTS = ['*',]
+ALLOWED_HOSTS = ['127.0.0.1', '51.250.106.203', 'localhost', 'backend']
 
-INTERNAL_IPS = ["127.0.0.1",]
+INTERNAL_IPS = ['127.0.0.1', 'localhost', 'backend']
 
 INSTALLED_APPS = [
     'api',
