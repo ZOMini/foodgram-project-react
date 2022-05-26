@@ -23,13 +23,6 @@ jobs:
           push: true
           context: backend/
           tags: ${{ secrets.DOCKER_USERNAME }}/backend:latest
-      
-      - name: Push to Docker Hub Frontend
-        uses: docker/build-push-action@v2
-        with:
-          push: true
-          context: frontend/
-          tags: ${{ secrets.DOCKER_USERNAME }}/infra_frontend:latest
         
 
   deploy:
@@ -46,10 +39,8 @@ jobs:
         stack_file_name: docker-compose.yml
         script: |
           sudo docker pull ${{ secrets.DOCKER_USERNAME }}/backend
-          sudo docker pull ${{ secrets.DOCKER_USERNAME }}/infra_frontend
           sudo docker-compose stop
           sudo docker-compose rm backend
-          sudo docker-compose rm infra_frontend
           rm .env
           touch .env
           echo DEBUG=${{ secrets.DEBUG }} >> .env
