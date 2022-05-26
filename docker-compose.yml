@@ -19,7 +19,7 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
       - static_value:/static/
-      - media_value:/media/
+      - media_value:/home/zomini/media/
       - result_build:/usr/share/nginx/html/
       #- result_build:/usr/share/nginx/html/
       # - ./docs/redoc.html:/usr/share/nginx/html/api/docs/redoc.html
@@ -36,7 +36,7 @@ services:
       - db
     volumes:
       - static_value:/static/
-      - media_value:/var/html/media/
+      - media_value:/home/zomini/media/
     env_file:
     - ./.env
 
