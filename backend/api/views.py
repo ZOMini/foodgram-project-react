@@ -63,7 +63,8 @@ class SubscribeViewSet(viewsets.ModelViewSet):
         return Response(HTTPStatus.NO_CONTENT)
 
 
-class TagViewSet(viewsets.ReadOnlyModelViewSet):
+class TagViewSet(viewsets.ModelViewSet):
+# class TagViewSet(viewsets.ReadOnlyModelViewSet):
 
     queryset = Tag.objects.all()
     serializer_class = TagSerializer
