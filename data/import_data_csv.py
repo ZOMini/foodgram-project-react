@@ -1,7 +1,8 @@
 import csv
 
-from api.models import Ingredient
 from django.db.utils import IntegrityError
+
+from backend.api.models import Ingredient
 
 
 def print_error(error, row, print_error):
