@@ -135,7 +135,7 @@ class FavoriteViewSet(BaseFavoriteCartViewSet):
     model = Favorite
 
 
-class DownloadShoppingCart(APIView):
+class DownloadCart(APIView):
     permission_classes = (permissions.IsAuthenticated, )
 
     def get(self, request):
