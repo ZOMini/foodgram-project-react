@@ -134,9 +134,8 @@ class FavoriteViewSet(BaseFavoriteCartViewSet):
     model = Favorite
 
 
-class DownloadCart(viewsets.ModelViewSet):
-
-    permission_classes = [permissions.IsAuthenticated]
+class DownloadShoppingCart(viewsets.APIView):
+    permission_classes = (permissions.IsAuthenticated, )
 
     def get(self, request):
         user = request.user
@@ -158,12 +157,12 @@ class DownloadCart(viewsets.ModelViewSet):
                     buying_list[name]['amount'] = (buying_list[name]['amount']
                                                    + amount)
 
-        cartfile = []
+        wishlist = []
         for item in buying_list:
-            cartfile.append(f'{item} - {buying_list[item]["amount"]} '
+            wishlist.append(f'{item} - {buying_list[item]["amount"]} '
                             f'{buying_list[item]["measurement_unit"]} \n')
-        cartfile.append('\n')
-        cartfile.append('FoodGram, 2022')
-        response = HttpResponse(cartfile, 'Content-Type: text/plain')
-        response['Content-Disposition'] = 'attachment; filename="cartfile.txt"'
+        wishlist.append('\n')
+        wishlist.append('FoodGram, 2021')
+        response = HttpResponse(wishlist, 'Content-Type: text/plain')
+        response['Content-Disposition'] = 'attachment; filename="wishlist.txt"'
         return response

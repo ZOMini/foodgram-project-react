@@ -23,7 +23,7 @@ urlpatterns = [
     path('users/subscriptions/',
          SubscribeViewSet.as_view({'get': 'list'}), name='subscriptions'),
     path('recipes/download_shopping_cart/',
-         DownloadCart.as_view({'get': 'list'}), name='download'),
+         DownloadCart.as_view(), name='dowload_shopping_cart'),
     path('users/<users_id>/subscribe/',
          SubscribeViewSet.as_view({'post': 'create',
                                    'delete': 'delete'}), name='subscribe'),
