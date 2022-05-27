@@ -26,6 +26,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from djoser.views import UserViewSet
 from rest_framework import permissions, viewsets
 from rest_framework.response import Response
+from rest_framework.views import APIView
 from users.models import User
 
 
@@ -134,7 +135,7 @@ class FavoriteViewSet(BaseFavoriteCartViewSet):
     model = Favorite
 
 
-class DownloadShoppingCart(viewsets.APIView):
+class DownloadShoppingCart(APIView):
     permission_classes = (permissions.IsAuthenticated, )
 
     def get(self, request):
