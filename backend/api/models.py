@@ -111,7 +111,8 @@ class Cart(models.Model):
         User,
         on_delete=models.CASCADE,
         verbose_name='Пользователь',
-        help_text='Выберите пользователя'
+        help_text='Выберите пользователя',
+        related_name='purchases'
     )
     recipe = models.ForeignKey(
         Recipe,
