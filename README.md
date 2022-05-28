@@ -1,6 +1,6 @@
-Адрес для проверки:
-http://51.250.106.203/ 
-ee-2@ya.ru 90210 (superuser)
+Адрес для проверки:<br>
+http://51.250.106.203/ <br>
+ee-2@ya.ru 90210 (superuser)<br>
 
 [![foodgram workflow](https://github.com/zomini/foodgram-project-react/actions/workflows/main.yml/badge.svg)](https://github.com/zomini/zomini/foodgram-project-react/actions/workflows/main.yml)
 
@@ -46,12 +46,6 @@ sudo docker-compose exec web python manage.py migrate --noinput
 
 ```
 sudo docker-compose exec web python manage.py collectstatic --noinput
-```
-
-Для загрузки ингредиентов запустите следующую команду:
-
-```
-sudo docker-compose exec web python manage.py add_ingredients
 ```
 
 Для создания суперпользователя запустите следующую команду:
