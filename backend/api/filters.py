@@ -1,4 +1,4 @@
-from api.models import Ingredient, Recipe, ShoppingCart
+from api.models import Cart, Ingredient, Recipe
 from django.db.models import IntegerField, Value
 from django_filters.rest_framework import (
     AllValuesMultipleFilter,
@@ -55,9 +55,9 @@ class RecipeFilter(FilterSet):
             return queryset
         try:
             recipes = (
-                self.request.user.shopping_cart.recipes.all()
+                self.request.user.purchases.recipes.all()
             )
-        except ShoppingCart.DoesNotExist:
+        except Cart.DoesNotExist:
             return queryset
         return queryset.filter(
             pk__in=(recipe.pk for recipe in recipes)
