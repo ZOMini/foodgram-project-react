@@ -33,7 +33,7 @@ class IngredientSearchFilter(FilterSet):
         return start_with_queryset.union(contain_queryset).order_by('order')
 
 
-class RecipeFilter(FilterSet):
+class RecipeFilters(FilterSet):
     is_favorited = BooleanFilter(method='get_is_favorited')
     is_in_shopping_cart = BooleanFilter(method='get_is_in_shopping_cart')
     tags = AllValuesMultipleFilter(field_name='tags__slug')
