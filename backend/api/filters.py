@@ -55,7 +55,7 @@ class RecipeFilters(FilterSet):
             return queryset
         try:
             recipes = (
-                self.request.user.purchases.recipes.all()
+                self.request.user.purchases.recipe.all()
             )
         except Cart.DoesNotExist:
             return queryset
