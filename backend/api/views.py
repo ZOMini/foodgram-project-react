@@ -158,12 +158,12 @@ class DownloadCart(APIView):
                     buying_list[name]['amount'] = (buying_list[name]['amount']
                                                    + amount)
 
-        wishlist = []
+        shoping_list = []
         for item in buying_list:
-            wishlist.append(f'{item} - {buying_list[item]["amount"]} '
+            shoping_list.append(f'{item} - {buying_list[item]["amount"]} '
                             f'{buying_list[item]["measurement_unit"]} \n')
-        wishlist.append('\n')
-        wishlist.append('FoodGram, 2021')
-        response = HttpResponse(wishlist, 'Content-Type: text/plain')
-        response['Content-Disposition'] = 'attachment; filename="wishlist.txt"'
+        shoping_list.append('\n')
+        shoping_list.append('FoodGram, 2022')
+        response = HttpResponse(shoping_list, 'Content-Type: text/plain')
+        response['Content-Disposition'] = 'attachment; filename="shoping_list.txt"'
         return response
