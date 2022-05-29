@@ -1,3 +1,4 @@
+import io
 from http import HTTPStatus
 
 from api.filters import IngredientSearchFilter, RecipeFilters
@@ -20,10 +21,12 @@ from api.serializers import (
     SubscriptionSerializer,
     TagSerializer
 )
-from django.http import HttpResponse
+from django.http import FileResponse, HttpResponse
 from django.shortcuts import get_list_or_404, get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
 from djoser.views import UserViewSet
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen import canvas
 from rest_framework import permissions, viewsets
 from rest_framework.response import Response
@@ -164,9 +167,15 @@ class DownloadCart(APIView):
                             f'{buying_list[item]["measurement_unit"]} \n')
         shoping_list.append('\n')
         shoping_list.append('FoodGram, 2022')
-        response = HttpResponse(shoping_list, 'Content-Type: text/plain')
-        response['Content-Disposition'] = 'attachment; filename="shoping_list.pdf"'
-        p = canvas.Canvas(response)
+        # response = HttpResponse(shoping_list, 'Content-Type: text/plain')
+        # response['Content-Disposition'] = 'attachment; filename="shoping_list.pdf"'
+        pdfmetrics.registerFont(TTFont('DejaVuSerif', './ttf/DejaVuSerif.ttf'))
+        buffer = io.BytesIO()
+        p = canvas.Canvas(buffer)
+        p.setFont("DejaVuSerif", 15)
+        for line in shoping_list:
+            p.drawString(line)
         p.showPage()
         p.save()
-        return response
+        buffer.seek(0)
+        return FileResponse(buffer,as_attachment=True,filename='cart_list.pdf')
