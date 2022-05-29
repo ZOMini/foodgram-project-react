@@ -21,7 +21,7 @@ from api.serializers import (
     SubscriptionSerializer,
     TagSerializer
 )
-from django.http import FileResponse, HttpResponse
+from django.http import FileResponse
 from django.shortcuts import get_list_or_404, get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
 from djoser.views import UserViewSet
@@ -169,7 +169,7 @@ class DownloadCart(APIView):
         shoping_list.append('FoodGram, 2022')
         # response = HttpResponse(shoping_list, 'Content-Type: text/plain')
         # response['Content-Disposition'] = 'attachment; filename="shoping_list.pdf"'
-        pdfmetrics.registerFont(TTFont('DejaVuSerif', './ttf/DejaVuSerif.ttf'))
+        pdfmetrics.registerFont(TTFont('DejaVuSerif', '.backend/api/ttf/DejaVuSerif.ttf'))
         buffer = io.BytesIO()
         p = canvas.Canvas(buffer)
         p.setFont("DejaVuSerif", 15)
@@ -178,4 +178,4 @@ class DownloadCart(APIView):
         p.showPage()
         p.save()
         buffer.seek(0)
-        return FileResponse(buffer,as_attachment=True,filename='cart_list.pdf')
+        return FileResponse(buffer, as_attachment=True, filename='cart_list.pdf')
