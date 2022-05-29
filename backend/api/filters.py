@@ -1,6 +1,7 @@
-from api.models import Recipe
 from django_filters import rest_framework as django_filter
 from rest_framework import filters
+
+from api.models import Recipe
 from users.models import User
 
 

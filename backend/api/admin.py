@@ -1,3 +1,5 @@
+from django.contrib import admin
+
 from api.models import (
     Cart,
     Favorite,
@@ -8,7 +10,6 @@ from api.models import (
     Tag,
     TagRecipe
 )
-from django.contrib import admin
 
 
 class IngredientRecipeInline(admin.TabularInline):

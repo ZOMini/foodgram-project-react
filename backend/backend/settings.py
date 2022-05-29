@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = 'b5g8ob4h4umd^5otf9lg!)odp%3bhzdi62b!j__u3+b6tc9)*v'
+SECRET_KEY = os.getenv('DB_PORT', default='b5g8ob4h4umd^5otf9lg!)odp%3bhzdi62b!j__u3+b6tc9)*v')
 
 DEBUG = os.getenv('DEBUG', default=True),
 

@@ -1,11 +1,12 @@
 import io
 
-from api.models import IngredientRecipe
 from django.http import FileResponse
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen import canvas
 from rest_framework.views import APIView
+
+from api.models import IngredientRecipe
 
 
 class DownloadCartView(APIView):
