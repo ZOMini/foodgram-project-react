@@ -24,6 +24,7 @@ from django.http import HttpResponse
 from django.shortcuts import get_list_or_404, get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
 from djoser.views import UserViewSet
+from reportlab.pdfgen import canvas
 from rest_framework import permissions, viewsets
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -164,5 +165,8 @@ class DownloadCart(APIView):
         shoping_list.append('\n')
         shoping_list.append('FoodGram, 2022')
         response = HttpResponse(shoping_list, 'Content-Type: text/plain')
-        response['Content-Disposition'] = 'attachment; filename="shoping_list.txt"'
+        response['Content-Disposition'] = 'attachment; filename="shoping_list.pdf"'
+        p = canvas.Canvas(response)
+        p.showPage()
+        p.save()
         return response
