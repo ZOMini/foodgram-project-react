@@ -1,6 +1,10 @@
-Адрес для проверки:<br>
-http://51.250.106.203/ <br>
-ee-2@ya.ru 90210 (superuser)<br>
+```
+Адрес для проверки:
+http://51.250.106.203/
+un: ee-2@ya.ru 
+pw: 90210 
+(superuser)
+```
 
 [![foodgram workflow](https://github.com/zomini/foodgram-project-react/actions/workflows/main.yml/badge.svg)](https://github.com/zomini/zomini/foodgram-project-react/actions/workflows/main.yml)
 
