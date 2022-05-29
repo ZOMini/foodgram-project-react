@@ -14,8 +14,8 @@ from api.views import (
 
 app_name = 'api'
 
-v1_router = DefaultRouter(trailing_slash=False)
-v1_router.register(r'users', CreateUserView, basename='users')
+v1_router = DefaultRouter()
+v1_router.register('users', CreateUserView, basename='users')
 v1_router.register(r'tags', TagViewSet, basename='tags')
 v1_router.register(r'recipes', RecipeViewSet, basename='recipes')
 v1_router.register(r'ingredients', IngredientViewSet, basename='ingredients')
@@ -34,6 +34,6 @@ urlpatterns = [
     path('recipes/<recipes_id>/shopping_cart/',
          CartViewSet.as_view({'post': 'create',
                               'delete': 'delete'}), name='cart'),
-    path('v1/', include(v1_router.urls)),
+    path('', include(v1_router.urls)),
     path('auth/', include('djoser.urls.authtoken')),
 ]
