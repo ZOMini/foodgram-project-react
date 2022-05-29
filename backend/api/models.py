@@ -11,12 +11,11 @@ class Ingredient(models.Model):
         verbose_name='Название',
         help_text='Введите название продуктов')
     measurement_unit = models.CharField(
-        max_length=200,
+        max_length=50,
         verbose_name='Единицы измерения',
         help_text='Введите единицы измерения')
 
     class Meta:
-
         verbose_name = 'Продукт'
         verbose_name_plural = 'Продукты'
 
@@ -35,13 +34,12 @@ class Tag(models.Model):
         verbose_name='Цвет',
         help_text='Введите цвет тега')
     slug = models.SlugField(
-        max_length=200,
+        max_length=50,
         unique=True,
         verbose_name='Текстовый идентификатор тега',
         help_text='Введите текстовый идентификатор тега')
 
     class Meta:
-
         verbose_name = 'Тег'
         verbose_name_plural = 'Теги'
 
@@ -95,7 +93,6 @@ class Recipe(models.Model):
         help_text='Добавить дату создания')
 
     class Meta:
-
         ordering = ('-pub_date', )
         verbose_name = 'Рецепт'
         verbose_name_plural = 'Рецепты'
@@ -123,7 +120,6 @@ class Cart(models.Model):
     )
 
     class Meta:
-
         verbose_name = 'Корзина'
         verbose_name_plural = 'Корзины'
         constraints = [
@@ -154,7 +150,6 @@ class Subscribe(models.Model):
     )
 
     class Meta:
-
         verbose_name = 'Подписка'
         verbose_name_plural = 'Подписки'
         constraints = [
@@ -184,17 +179,18 @@ class IngredientRecipe(models.Model):
     )
     amount = models.IntegerField(
         default=1,
-        validators=[MinValueValidator(1)],
+        validators=[MinValueValidator(
+            1, message='Минимальное время приготовления 1 минута')
+        ],
         verbose_name='Количество продукта',
         help_text='Введите количество продукта'
     )
 
     class Meta:
-
         verbose_name = 'Продукты в рецепте'
         verbose_name_plural = 'Продукты в рецепте'
         constraints = [
-            models.UniqueConstraint(fields=['ingredient', 'recipe'],
+            models.UniqueConstraint(fields=('ingredient', 'recipe'),
                                     name='unique_ingredientrecipe')
         ]
 
@@ -217,7 +213,6 @@ class TagRecipe(models.Model):
         help_text='Выберите рецепт')
 
     class Meta:
-
         verbose_name = 'Теги рецепта'
         verbose_name_plural = 'Теги рецепта'
         constraints = [
@@ -247,7 +242,6 @@ class Favorite(models.Model):
     )
 
     class Meta:
-
         verbose_name = 'Избранный'
         verbose_name_plural = 'Избранные'
         constraints = [

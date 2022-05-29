@@ -1,4 +1,3 @@
-import io
 from http import HTTPStatus
 
 from api.download_cart import DownloadCartView
@@ -127,5 +126,5 @@ class FavoriteViewSet(BaseFavoriteCartViewSet):
 
 
 class DownloadCart(DownloadCartView):
-    
-    permission_classes = (permissions.IsAuthenticated, )
+
+    permission_classes = (permissions.IsAuthenticated,)

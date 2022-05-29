@@ -8,6 +8,7 @@ def safe_methods(request):
         return True
     return False
 
+
 class IsAdminOrReadOnly(permissions.BasePermission):
 
     def has_permission(self, request, view):
