@@ -169,7 +169,7 @@ class DownloadCart(APIView):
         shoping_list.append('FoodGram, 2022')
         # response = HttpResponse(shoping_list, 'Content-Type: text/plain')
         # response['Content-Disposition'] = 'attachment; filename="shoping_list.pdf"'
-        pdfmetrics.registerFont(TTFont('DejaVuSerif', '.backend/api/ttf/DejaVuSerif.ttf'))
+        pdfmetrics.registerFont(TTFont('DejaVuSerif', './api/ttf/DejaVuSerif.ttf'))
         buffer = io.BytesIO()
         p = canvas.Canvas(buffer)
         p.setFont("DejaVuSerif", 15)
