@@ -26,8 +26,7 @@ class CommonSubscribed(metaclass=serializers.SerializerMetaclass):
         if Subscribe.objects.filter(
                 user=request.user, following__id=obj.id).exists():
             return True
-        else:
-            return False
+        return False
 
 
 class CommonRecipe(metaclass=serializers.SerializerMetaclass):
