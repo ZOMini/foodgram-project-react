@@ -173,8 +173,10 @@ class DownloadCart(APIView):
         buffer = io.BytesIO()
         p = canvas.Canvas(buffer)
         p.setFont("DejaVuSerif", 15)
+        start = 800
         for line in shoping_list:
-            p.drawString(line)
+            p.drawString(50, start, line)
+            start -= 20
         p.showPage()
         p.save()
         buffer.seek(0)
