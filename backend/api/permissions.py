@@ -43,6 +43,3 @@ class IsAuthorOrAdminOrReadOnly(permissions.BasePermission):
                 )
             )
         )
-
-class AAA(object):
-    pass
