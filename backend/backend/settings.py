@@ -1,6 +1,4 @@
-
 import os
-from datetime import timedelta
 
 from dotenv import load_dotenv
 
@@ -11,7 +9,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', default='b5g8ob4h4umd^5otf9lg!)odp%3bhzdi62
 
 DEBUG = os.getenv('DEBUG', default=True),
 
-ALLOWED_HOSTS = ['127.0.0.1', '51.250.106.203', 'localhost', 'backend']
+ALLOWED_HOSTS = ['127.0.0.1', '62.84.117.214', 'localhost', 'backend', '62.84.117.214:9003']
 
 INTERNAL_IPS = ['127.0.0.1', 'localhost', 'backend']
 
