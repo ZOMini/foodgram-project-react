@@ -42,20 +42,20 @@ DEBUG
 Запустите миграции при помощи следующей команды:
 
 ```
-sudo docker-compose exec web python manage.py makemigrations --noinput
-sudo docker-compose exec web python manage.py migrate --noinput
+sudo docker-compose exec backend python manage.py makemigrations --noinput
+sudo docker-compose exec backend python manage.py migrate --noinput
 ```
 
 Для сбора статики запустите следующую команду:
 
 ```
-sudo docker-compose exec web python manage.py collectstatic --noinput
+sudo docker-compose exec backend python manage.py collectstatic --noinput
 ```
 
 Для создания суперпользователя запустите следующую команду:
 
 ```
-sudo docker-compose exec web python manage.py createsuperuser
+sudo docker-compose exec backend python manage.py createsuperuser
 ```
 
 Создайте теги: завтрак, обед, ужин
