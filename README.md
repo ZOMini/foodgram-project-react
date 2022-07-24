@@ -1,11 +1,11 @@
 ```
 Адрес для проверки(временно):
-http://51.250.106.203/
+http://62.84.117.214:9003/
 un: ee-2@ya.ru 
-pw: 90210 
+pw: Vitaliya
 (superuser)
 ```
-
+[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://62.84.117.214:9003)
 [![foodgram workflow](https://github.com/zomini/foodgram-project-react/actions/workflows/main.yml/badge.svg)](https://github.com/zomini/zomini/foodgram-project-react/actions/workflows/main.yml)
 
 # «Продуктовый помощник»

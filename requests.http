@@ -23,15 +23,15 @@ Content-Type: application/json
 ###
 GET http://62.84.117.214:9003/api/users/1/
 Content-Type: application/json
-Authorization: Token 168465847ffbd57099d57d1d65ae7d4af23171bc
+Authorization: Token 4b5ea97d4784174cd1f8927ec193f39a31c916f9
 ###
 GET http://62.84.117.214:9003/api/users/me/
 Content-Type: application/json
-Authorization: Token 168465847ffbd57099d57d1d65ae7d4af23171bc
+Authorization: Token 4b5ea97d4784174cd1f8927ec193f39a31c916f9
 ###
 POST http://62.84.117.214:9003/api/users/set_password/
 Content-Type: application/json
-Authorization: Token 168465847ffbd57099d57d1d65ae7d4af23171bc
+Authorization: Token 4b5ea97d4784174cd1f8927ec193f39a31c916f9
 
 {
     "new_password": "q1r4w2e3",
@@ -48,7 +48,7 @@ Content-Type: application/json
 ###
 POST http://62.84.117.214:9003/api/auth/token/logout/
 Content-Type: application/json
-Authorization: Token 168465847ffbd57099d57d1d65ae7d4af23171bc
+Authorization: Token 4b5ea97d4784174cd1f8927ec193f39a31c916f9
 
 ### -----TAGS-------
 GET http://62.84.117.214:9003/api/tag/
@@ -67,55 +67,3 @@ Content-Type: application/json
 ### -----RECIPES-------
 GET http://62.84.117.214:9003/api/recipes/
 Content-Type: application/json
-
-###
-GET http://62.84.117.214:9003/api/v1/posts/1/comments/
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQzMzE0NzE2LCJqdGkiOiJjMDdmZjM3ZjQyMGE0NDExOTU1M2RiZWNjOWU3NTNhZCIsInVzZXJfaWQiOjF9.9D9tsPfExWFU1jqG98GcteJNav50HkjpOkP9uXKTthc
-###
-POST http://62.84.117.214:9003/api/v1/groups/
-Content-Type: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQzMzE0NzE2LCJqdGkiOiJjMDdmZjM3ZjQyMGE0NDExOTU1M2RiZWNjOWU3NTNhZCIsInVzZXJfaWQiOjF9.9D9tsPfExWFU1jqG98GcteJNav50HkjpOkP9uXKTthc
-
-{
-    "title": "436534767rer",
-    "slug": 4,
-    "description": "346436346bvbvbvb"
-}
-###
-POST http://62.84.117.214:9003/api/v1/posts/
-Content-Type: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQzMzE0NzE2LCJqdGkiOiJjMDdmZjM3ZjQyMGE0NDExOTU1M2RiZWNjOWU3NTNhZCIsInVzZXJfaWQiOjF9.9D9tsPfExWFU1jqG98GcteJNav50HkjpOkP9uXKTthc
-
-{
-    "text": "7777 собрались в р4кции «Русской мысли», чтобы поговорить о народном театре. Проект Шехтеля всем нравится.",
-    "group": 2
-}
-###
-POST http://62.84.117.214:9003/api/v1/posts/1/comments/
-Content-Type: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQzMzE0NzE2LCJqdGkiOiJjMDdmZjM3ZjQyMGE0NDExOTU1M2RiZWNjOWU3NTNhZCIsInVzZXJfaWQiOjF9.9D9tsPfExWFU1jqG98GcteJNav50HkjpOkP9uXKTthc
-
-{
-    "post": 1,
-    "text": "22тест тест"
-}
-###
-GET http://62.84.117.214:9003/api/v1/posts/1/comments/
-Content-Type: application/json
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQzMzE0NzE2LCJqdGkiOiJjMDdmZjM3ZjQyMGE0NDExOTU1M2RiZWNjOWU3NTNhZCIsInVzZXJfaWQiOjF9.9D9tsPfExWFU1jqG98GcteJNav50HkjpOkP9uXKTthc
-###
-POST http://62.84.117.214:9003/auth/users/
-Content-Type: application/json
-
-{
-    "username": "q1",
-    "password": "q1r4w2e3"
-}
-###
-POST http://62.84.117.214:9003/auth/jwt/create/
-Content-Type: application/json
-
-{
-    "username": "q1",
-    "password": "q1r4w2e3"
-}
