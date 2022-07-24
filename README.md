@@ -3,7 +3,7 @@
 http://62.84.117.214:9003/
 un: ee-2@ya.ru / pw: Vitaliya  -(superuser)
 ```
-[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://62.84.117.214:9003)
+[![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://62.84.117.214:9003/api/docs/)
 [![foodgram workflow](https://github.com/zomini/foodgram-project-react/actions/workflows/main.yml/badge.svg)](https://github.com/zomini/zomini/foodgram-project-react/actions/workflows/main.yml)
 
 # «Продуктовый помощник»
@@ -61,7 +61,8 @@ sudo docker-compose exec backend python manage.py createsuperuser
 docker-compose exec -T backend python manage.py loaddata data/ingredients_1.json 
 ```
 
-Создайте теги: завтрак, обед, ужин
+Создайте теги: завтрак, обед, ужин <br>
+http://62.84.117.214:9003/api/docs/  - Redoc<br>
 
 ## Системные требования
 ### Python==3.9
