@@ -1,8 +1,8 @@
 ### -----AUTH-------
-GET  http://127.0.0.1:8000/api/users/
+GET  http://62.84.117.214:9003/api/users/
 Content-Type: application/json
 ###
-POST http://127.0.0.1:8000/api/users/
+POST http://62.84.117.214:9003/api/users/
 Content-Type: application/json
 
 {
@@ -13,15 +13,23 @@ Content-Type: application/json
     "password": "q1r4w2e3"
 }
 ###
-GET http://127.0.0.1:8000/api/users/1/
+POST http://62.84.117.214:9003/api/api-token-auth/
+Content-Type: application/json
+
+{
+    "username": "ee-2@ya.ru",
+    "password": "Vitaliya"
+}
+###
+GET http://62.84.117.214:9003/api/users/1/
 Content-Type: application/json
 Authorization: Token 168465847ffbd57099d57d1d65ae7d4af23171bc
 ###
-GET http://127.0.0.1:8000/api/users/me/
+GET http://62.84.117.214:9003/api/users/me/
 Content-Type: application/json
 Authorization: Token 168465847ffbd57099d57d1d65ae7d4af23171bc
 ###
-POST http://127.0.0.1:8000/api/users/set_password/
+POST http://62.84.117.214:9003/api/users/set_password/
 Content-Type: application/json
 Authorization: Token 168465847ffbd57099d57d1d65ae7d4af23171bc
 
@@ -30,7 +38,7 @@ Authorization: Token 168465847ffbd57099d57d1d65ae7d4af23171bc
     "current_password": "q1r4w2e3"
 }
 ###
-POST http://127.0.0.1:8000/api/auth/token/login/
+POST http://62.84.117.214:9003/api/auth/token/login/
 Content-Type: application/json
 
 {
@@ -38,33 +46,33 @@ Content-Type: application/json
     "password": "q1r4w2e3"
 }
 ###
-POST http://127.0.0.1:8000/api/auth/token/logout/
+POST http://62.84.117.214:9003/api/auth/token/logout/
 Content-Type: application/json
 Authorization: Token 168465847ffbd57099d57d1d65ae7d4af23171bc
 
 ### -----TAGS-------
-GET http://127.0.0.1:8000/api/tag/
+GET http://62.84.117.214:9003/api/tag/
 Content-Type: application/json
 ###
-GET http://127.0.0.1:8000/api/tag/2/
+GET http://62.84.117.214:9003/api/tag/2/
 Content-Type: application/json
 
 ### -----INGREDIENTS-------
-GET http://127.0.0.1:8000/api/ingredient/
+GET http://62.84.117.214:9003/api/ingredient/
 Content-Type: application/json
 ###
-GET http://127.0.0.1:8000/api/ingredient/1/
+GET http://62.84.117.214:9003/api/ingredient/1/
 Content-Type: application/json
 
 ### -----RECIPES-------
-GET http://127.0.0.1:8000/api/recipes/
+GET http://62.84.117.214:9003/api/recipes/
 Content-Type: application/json
 
 ###
-GET http://127.0.0.1:8000/api/v1/posts/1/comments/
+GET http://62.84.117.214:9003/api/v1/posts/1/comments/
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQzMzE0NzE2LCJqdGkiOiJjMDdmZjM3ZjQyMGE0NDExOTU1M2RiZWNjOWU3NTNhZCIsInVzZXJfaWQiOjF9.9D9tsPfExWFU1jqG98GcteJNav50HkjpOkP9uXKTthc
 ###
-POST http://127.0.0.1:8000/api/v1/groups/
+POST http://62.84.117.214:9003/api/v1/groups/
 Content-Type: application/json
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQzMzE0NzE2LCJqdGkiOiJjMDdmZjM3ZjQyMGE0NDExOTU1M2RiZWNjOWU3NTNhZCIsInVzZXJfaWQiOjF9.9D9tsPfExWFU1jqG98GcteJNav50HkjpOkP9uXKTthc
 
@@ -74,7 +82,7 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiY
     "description": "346436346bvbvbvb"
 }
 ###
-POST http://127.0.0.1:8000/api/v1/posts/
+POST http://62.84.117.214:9003/api/v1/posts/
 Content-Type: application/json
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQzMzE0NzE2LCJqdGkiOiJjMDdmZjM3ZjQyMGE0NDExOTU1M2RiZWNjOWU3NTNhZCIsInVzZXJfaWQiOjF9.9D9tsPfExWFU1jqG98GcteJNav50HkjpOkP9uXKTthc
 
@@ -83,7 +91,7 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiY
     "group": 2
 }
 ###
-POST http://127.0.0.1:8000/api/v1/posts/1/comments/
+POST http://62.84.117.214:9003/api/v1/posts/1/comments/
 Content-Type: application/json
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQzMzE0NzE2LCJqdGkiOiJjMDdmZjM3ZjQyMGE0NDExOTU1M2RiZWNjOWU3NTNhZCIsInVzZXJfaWQiOjF9.9D9tsPfExWFU1jqG98GcteJNav50HkjpOkP9uXKTthc
 
@@ -92,11 +100,11 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiY
     "text": "22тест тест"
 }
 ###
-GET http://127.0.0.1:8000/api/v1/posts/1/comments/
+GET http://62.84.117.214:9003/api/v1/posts/1/comments/
 Content-Type: application/json
 Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQzMzE0NzE2LCJqdGkiOiJjMDdmZjM3ZjQyMGE0NDExOTU1M2RiZWNjOWU3NTNhZCIsInVzZXJfaWQiOjF9.9D9tsPfExWFU1jqG98GcteJNav50HkjpOkP9uXKTthc
 ###
-POST http://127.0.0.1:8000/auth/users/
+POST http://62.84.117.214:9003/auth/users/
 Content-Type: application/json
 
 {
@@ -104,7 +112,7 @@ Content-Type: application/json
     "password": "q1r4w2e3"
 }
 ###
-POST http://127.0.0.1:8000/auth/jwt/create/
+POST http://62.84.117.214:9003/auth/jwt/create/
 Content-Type: application/json
 
 {
