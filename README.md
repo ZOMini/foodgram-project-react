@@ -57,6 +57,11 @@ sudo docker-compose exec backend python manage.py collectstatic --noinput
 ```
 sudo docker-compose exec backend python manage.py createsuperuser
 ```
+Чтобы заполнить базу данных начальными данными списка ингридиетов выполните:
+
+```
+docker-compose exec -T backend python manage.py loaddata data/ingredients_1.json 
+```
 
 Создайте теги: завтрак, обед, ужин
 
