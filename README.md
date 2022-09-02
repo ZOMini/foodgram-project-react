@@ -1,6 +1,6 @@
 ```
 Проект работает:
-http://62.84.117.214:9003/
+http://130.193.37.228:9003/
 un: ee-2@ya.ru / pw: Vitaliya  -(superuser)
 ```
 [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://62.84.117.214:9003/api/docs/)

@@ -9,7 +9,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', default='b5g8ob4h4umd^5otf9lg!)odp%3bhzdi62
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', '62.84.117.214', 'localhost', 'backend', '62.84.117.214:9003']
+ALLOWED_HOSTS = ['127.0.0.1', '130.193.37.228', 'localhost', 'backend', '130.193.37.228:9003']
 
 INTERNAL_IPS = ['127.0.0.1', 'localhost', 'backend']
 
